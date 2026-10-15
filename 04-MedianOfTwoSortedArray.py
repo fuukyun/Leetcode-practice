@@ -13,6 +13,19 @@ class Solution:
     #         return (nums[s1] + nums[s2]) / 2
 
     # sol 2
+    '''
+    # Ý tưởng:
+    # - Hai mảng đã sắp xếp sẵn, nên không cần gộp rồi sort lại (như hướng 1).
+    # - Dùng hai con trỏ i, j (cho nums1, nums2). Mỗi bước lấy phần tử nhỏ hơn
+    #   giữa nums1[i] và nums2[j], rồi dịch con trỏ của mảng vừa bị lấy.
+    # - Không cần trộn hết, chỉ cần đi tới vị trí giữa của mảng gộp.
+    #
+    # Gợi ý:
+    # - Phần tử giữa nằm ở chỉ số t // 2 (t = m + n), nên cần lấy t // 2 + 1 phần tử.
+    # - Tổng chẵn thì cần hai phần tử giữa, nên phải nhớ giá trị của bước trước.
+    # - Một mảng có thể hết trước (hoặc rỗng từ đầu): xử lý sao để không bị
+    #   IndexError và không chọn lại phần tử cũ?
+    '''
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         m = len(nums1)
         n = len(nums2)
